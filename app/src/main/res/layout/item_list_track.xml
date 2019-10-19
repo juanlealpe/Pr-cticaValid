@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="viewModel"
+            type="com.sport.practicavalid.app.ui.track.TrackAdapterViewModel"/>
+    </data>
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{clickListener}" android:background="@drawable/bg_item_list">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/movie_title"
+            android:text="@{viewModel.titleString}" android:paddingStart="8dp" android:paddingEnd="8dp"
+            android:paddingTop="16dp" android:paddingBottom="16dp"/>
+    </LinearLayout>
+</layout>

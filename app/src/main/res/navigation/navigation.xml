@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/tracksFragment">
+    <fragment
+        android:id="@+id/tracksFragment"
+        android:name="com.sport.practicavalid.app.ui.track.TracksFragment"
+        android:label="fragment_tracks"
+        tools:layout="@layout/fragment_tracks" />
+</navigation>
