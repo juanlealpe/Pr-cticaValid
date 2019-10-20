@@ -8,5 +8,23 @@
         android:id="@+id/tracksFragment"
         android:name="com.sport.practicavalid.app.ui.track.TracksFragment"
         android:label="fragment_tracks"
-        tools:layout="@layout/fragment_tracks" />
+        tools:layout="@layout/fragment_tracks" >
+        <action
+            android:id="@+id/to_detail_track_fragment"
+            app:destination="@+id/detail_track_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail_track_fragment"
+        android:name="com.sport.practicavalid.app.ui.track.detail.DetailTrackBaseFragment"
+        android:label="DetailTrackBaseFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="url"
+            app:argType="string" />
+        <argument
+            android:name="urlImage"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 
 import androidx.recyclerview.widget.RecyclerView
 import com.sport.practicavalid.R
@@ -37,11 +38,21 @@ class TrackAdapter :
         getItem(position).let { track ->
             with(holder) {
                 itemView.tag = track
-               // bind(createOnClickListener(null), track)
+                bind(createOnClickListener(track.name,track.url,track.imageList.get(0).text), track)
             }
         }
     }
 
+    private fun createOnClickListener(name: String,url: String, urlImage:String): View.OnClickListener {
+        return View.OnClickListener {
+
+            val direction =
+                TracksFragmentDirections.toDetailTrackFragment(name,url,urlImage)
+            it.findNavController().navigate(direction)
+
+           // it.findNavController().navigate(direction)
+        }
+    }
     private class DiffCallback : DiffUtil.ItemCallback<Tracks>() {
 
         override fun areItemsTheSame(oldItem: Tracks, newItem: Tracks): Boolean {

@@ -44,6 +44,8 @@ class TracksFragment : BaseFragment(){
 
         Log.i(Constants.LOG_I, "Data: ${intent.toString()}")
 
+        getTracks()
+
         /*Navigation.findNavController(view)
             .createDeepLink()
             .setDestination(R.id.search_movie_fragment)
